@@ -131,12 +131,13 @@ Ce projet est sous licence MIT - voir le fichier LICENSE pour plus de détails.
 
 ## 👤 Auteur
 
-Développé par [Votre Nom]
+Développé par Demteli Emmanuel
 
 ## 📞 Contact
 
-Pour toute question ou suggestion, n'hésitez pas à me contacter.
+Pour toute question ou suggestion, n'hésitez pas à me contacter via whatsapp au.
 
----
++237 695 079 821 
++237 652 022 430
 
 ⭐ Si ce projet vous a été utile, n'hésitez pas à lui donner une étoile !
