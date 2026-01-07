@@ -1,19 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Chatbot</title>
+    <meta name="description" content="Chatbot intelligent pour répondre à vos questions sur l'hôtel">
+    <title>Chatbot Hôtel - Assistant Virtuel</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="chat-container">
-        <div id="chat-window" class="chat-window"></div>
-        <form id="chat-form">
-            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required>
-            <button type="submit">Send</button>
+        <!-- En-tête du chat -->
+        <div class="chat-header">
+            <div class="bot-avatar-header">🤖</div>
+            <div class="header-info">
+                <h1>Assistant Hôtel</h1>
+                <p class="status">En ligne</p>
+            </div>
+            <!-- Boutons d'actions dans l'en-tête -->
+            <div class="header-actions">
+                <button type="button" id="toggle-sound" class="icon-btn" title="Activer/Désactiver les sons" aria-label="Toggle sound">
+                    <span id="sound-icon">🔊</span>
+                </button>
+                <button type="button" id="clear-chat" class="icon-btn" title="Effacer la conversation" aria-label="Clear chat">
+                    <span>🗑️</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Suggestions de questions -->
+        <div id="suggestions-container" class="suggestions-container">
+            <p class="suggestions-title">Questions fréquentes :</p>
+            <div class="suggestions-buttons" id="suggestions-buttons">
+                <button type="button" class="suggestion-btn" data-message="Hello">👋 Saluer</button>
+                <button type="button" class="suggestion-btn" data-message="Are rooms available?">🛏️ Disponibilités</button>
+                <button type="button" class="suggestion-btn" data-message="What is the price?">💰 Tarifs</button>
+                <button type="button" class="suggestion-btn" data-message="Do you have WiFi?">📶 WiFi</button>
+                <button type="button" class="suggestion-btn" data-message="What are the tourist places?">🗺️ Tourisme</button>
+                <button type="button" class="suggestion-btn" data-message="Do you provide parking?">🚗 Parking</button>
+            </div>
+        </div>
+
+        <!-- Fenêtre de conversation -->
+        <div id="chat-window" class="chat-window">
+            <!-- Message de bienvenue -->
+            <div class="message bot">
+                <div class="message-content">
+                    <div class="avatar">🤖</div>
+                    <div class="bubble">
+                        <p>Bonjour ! 👋 Je suis votre assistant virtuel. Comment puis-je vous aider aujourd'hui ?</p>
+                        <span class="timestamp">Maintenant</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicateur de saisie -->
+        <div id="typing-indicator" class="typing-indicator" style="display: none;">
+            <div class="avatar">🤖</div>
+            <div class="typing-bubble">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Compteur de messages -->
+        <div class="message-counter">
+            <span id="message-count">0</span> messages échangés
+        </div>
+
+        <!-- Formulaire de saisie -->
+        <form id="chat-form" class="chat-form">
+            <input 
+                type="text" 
+                id="user-input" 
+                placeholder="Tapez votre message..." 
+                autocomplete="off" 
+                required
+            >
+            <button type="submit" aria-label="Envoyer le message">
+                <span class="send-icon">📤</span>
+            </button>
         </form>
     </div>
+
     <script src="/static/script.js"></script>
 </body>
 </html>
